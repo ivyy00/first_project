@@ -35,3 +35,12 @@ class Cart(models.Model):
       quntity=models.PositiveBigIntegerField(default=1)
       created_at=models.DateTimeField(auto_now_add=True)
 
+      def get_total_price(self):
+        return self.quntity * self.product.price
+      def get_cart_items(self):
+        return Cart.objects.filter(user=self.user)
+
+      def get_cart_total(self):
+        return sum(item.get_total_price() for item in self.get_cart_items())
+
+

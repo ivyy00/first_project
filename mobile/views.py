@@ -7,11 +7,35 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
+import requests
+from django.template.loader import render_to_string
+
 
 # Create your views here.
+def ajax_cart_preview(request):
+    if request.user.is_authenticated:
+        cart, created = Cart.objects.get_or_create(user=request.user)
+        items = cart.get_cart_items()
+    else:
+        items = []
+
+    html = render_to_string('partials/_cart_preview.html', {'items': items})
+    return JsonResponse({'html': html})
 
 def Welcome(request):
     return HttpResponse(' جانقو')
+
+def get_remote_products(request):
+    url="https://fakestoreapi.com/products"
+    response=requests.get(url)
+    data=response.json()
+    return JsonResponse(data , safe=False)
+
+def get_remoteproductsview(request):
+    url="https://fakestoreapi.com/products"
+    response=requests.get(url)
+    data=response.json()
+    return render(request, 'remoteproducts.html',{"data":data})
 
 def auth_login(request):
     if request.method == "POST":
@@ -36,10 +60,6 @@ def auth_register(request):
     else:
         form = UserCreationForm()
     return render(request, 'auth/auth_register.html', {'form': form})
-
-
-
-
 
 def Landpage(request):
     category=Category.objects.all() # قراءة البيانات من الجدول category 
@@ -167,4 +187,19 @@ def add_to_cart(request):
         "product":Product
     }
     return render(request,"details.html",context)
+
+def product_list(request):
+    products = product.objects.all()
+    return render(request, 'product_list.html', {'products': products})
+
+
+def view_cart(request):
+    cart, created = Cart.objects.get_or_create(user=request.user)
+    items = cart.get_cart_items()
+    total = cart.get_cart_total()
+
+    return render(request, 'cart.html', {
+        'items': items,
+        'total': total
+    })
 

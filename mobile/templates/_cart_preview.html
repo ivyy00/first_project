@@ -1,0 +1,12 @@
+{% if items %}
+  <ul class="cart-preview">
+    {% for item in items %}
+      <li>
+        {{ item.product.name }} × {{ item.quntity }} = ${{ item.get_total_price }}
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'view_cart' %}" class="btn-small">View Cart</a>
+{% else %}
+  <p>Your cart is empty.</p>
+{% endif %}

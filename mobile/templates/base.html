@@ -56,10 +56,38 @@
             </div>
             <ul class="list-inline">
                <li class="list-inline-item">
-                  <button class="btn btn-success position-relative rounded">
-                      <i class="bi bi-basket"></i>
-                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ cart_total }}</span>
-                  </button>
+                  <!-- Cart Icon -->
+
+                  <div id="cart-container" onmouseover="loadCartPreview()" style="position: relative;">
+                     <i class="bi bi-bag-fill"></i>
+                     
+                     <!-- Cart Preview will be loaded here -->
+
+                     <div id="cart-preview" style="display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #ccc; z-index: 1000;">
+                        <p>Loading...</p>
+                     </div>
+                  </div>
+
+                  <script>
+                  function loadCartPreview() {
+                     const preview = document.getElementById("cart-preview");
+                     preview.style.display = "block";
+
+                     // Only load once per hover (optional)
+                     if (!preview.dataset.loaded) {
+                        fetch("{% url 'ajax_cart_preview' %}")
+                              .then(response => response.json())
+                              .then(data => {
+                                 preview.innerHTML = data.html;
+                                 preview.dataset.loaded = "true";
+                              })
+                              .catch(error => {
+                                 preview.innerHTML = "<p>Error loading cart.</p>";
+                              });
+                          }
+                       }
+                  </script>
+
                </li>
                <li class="list-inline-item"><a href="{%   url 'blog'   %}">المقالات</a></li>
                <li class="list-inline-item"><a href="{%   url 'aboutus'   %}">حولنا</a></li>
