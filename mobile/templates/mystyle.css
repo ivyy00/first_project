@@ -1,0 +1,40 @@
+footer{
+  position: fixed;
+  bottom: 0;
+  width:100%;
+  background-color: #6c757d;
+  color: white;
+  text-align: center;
+  }
+
+a{
+  color:inherit ;
+  text-decoration: none;
+  }
+
+.article{
+  max-width: 900px;
+  margin: 200px auto;
+  padding: 0.15px ;
+  }
+
+.article h2{
+  margin-top: 0;
+  color:#333
+  }
+
+.article p{
+  color : #555;
+  }
+
+body {
+  font-family: 'Cairo';font-size: 22px;
+  }
+   
+nav {
+  background-color: aquamarine;
+}
+/* h1 ,h2 {}.  // for elements 
+.class{} // for class
+
+#id // for ides */
