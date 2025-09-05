@@ -188,9 +188,9 @@ def add_to_cart(request):
     }
     return render(request,"details.html",context)
 
-# def product_list(request):
-#     products = product.objects.all()
-#     return render(request, 'product_list.html', {'products': products})
+def product_list(request):
+    products = Products.objects.all()
+    return render(request, 'product_list.html', {'products': products})
 
 
 def view_cart(request):
