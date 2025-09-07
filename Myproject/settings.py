@@ -42,7 +42,7 @@ SECRET_KEY = 'django-insecure--ssqd7zy=sr1n9olf!ens+hnmo3n024-o5kw@7kku=^e8)oj4f
 DEBUG = False
 
 # ALLOWED_HOSTS = ['rawan-6ad06a5b1ffd.herokuapp.com/', 'localhost', '127.0.0.1']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['rawan-6ad06a5b1ffd.herokuapp.com/' , 'localhost', '127.0.0.1']
 
 # Application definition
 
