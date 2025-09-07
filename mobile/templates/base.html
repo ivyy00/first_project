@@ -120,9 +120,9 @@ li.dropdown {
                  <li class="dropdown">
                      <a href="javascript:void(0)" class="dropbtn">الاقـسـام</a>
                      <div class="dropdown-content">
-                        <a href="#">قهـوه مطـحونـه</a>
-                        <a href="#">قهـوه بـن</a>
-                        <a href="#">كبـسولات القـهوه </a>
+                        <a href="{% url 'getphone' %}?id=7">قهـوه مطـحونـه</a>
+                        <a href="{% url 'getphone' %}?id=5" >قهـوه بـن</a>
+                        <a href="{% url 'getphone' %}?id=6">كبـسولات القـهوه </a>
                      </div>
                   </li>
                <a class="navbar-brand" id="titlee" href="{% url 'landpage' %}"> قـهـوتي </a>
