@@ -3,35 +3,31 @@
 {% block content %}
 {% load static %}
 
- <div class="container">
-    <h1 class="mb-4 text-center">قائمة الهواتف</h1>
+ <div class="container-fluid p-3 m-0 border-0 bd-example m-0 border-0">
         <div class="row d-flex justify-content-around">
         
         
         {%  for item in product %}
           <div class="col-12 col-md-6 col-lg-4 ">
-            <div class="card h-100 shadow-sm border-0">
+            <div class="card h-100 border-0" style="box-shadow: 4px 4px 5px 7px rgb(111, 111, 111) ;">
                 <img src="{{item.image.url}}" class="card-img-top" style="height: 250px;object-fit: contain;">
                <div class="card-body">
                   <div class="row">
                     <div class="col">
                        <ul class="list-unstyled small">
-                          <li class="pt-2"><a href="{% url 'add_to_cart' %}?id={{item.id}}" class="btn btn-info ">أضف الى السلة</a></li>
-                           <li class="pt-2"><a href="{% url 'Checkout' %}" class="btn btn-outline-danger"> مواصلة الشراء  </a></li>
+                          <li class="pt-2"><a href="{% url 'add_to_cart' %}?id={{item.id}}" class="btn btn-success ">أضف الى السلة</a></li>
+                           <li class="pt-2"><a href="{% url 'Checkout' %}" class="btn btn btn-secondary"> مواصلة الشراء  </a></li>
                          </ul>
                     </div>
                     <div class="col">
                         <h5 class="card-title">{{ item.name }}</h5>
                         <p class="text-muted">{{item.brand}}</p>
-                        <ul class="list-unstyled small">
-                          <li>السعة {{item.storage}}</li>
-                          <li>اللون {{item.color}}</li>
-                         </ul>
+
                     </div>
                   </div>
                 
                  <div class="card-footer bg-white d-flex justify-content-between ">
-                    <span class="fw-bold text-success ">{{item.price}} رس</span>
+                    <span class="fw-bold ">{{item.price}} رس</span>
                     
                  </div>
                </div>

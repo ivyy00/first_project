@@ -62,7 +62,7 @@ def auth_register(request):
     return render(request, 'auth/auth_register.html', {'form': form})
 
 def Landpage(request):
-    category=Category.objects.all() # قراءة البيانات من الجدول category 
+    category=Category.objects.all() 
     
     context={
         'data':category
@@ -188,9 +188,26 @@ def add_to_cart(request):
     }
     return render(request,"details.html",context)
 
+def view_cart(request):
+    cart = request.session.get('cart', {})
+    total_price = sum(item['price'] * item['quantity'] for item in cart.values())
+
+    context = {
+        'cart': cart,
+        'total': total_price
+    }
+    return render(request, 'view_cart.html', context)
+
 def product_list(request):
     products = Products.objects.all()
     return render(request, 'product_list.html', {'products': products})
+
+
+def coffeeben(request):
+    template=loader.get_template('coffeeben.html')
+    return HttpResponse(template.render())
+
+
 
 
 def view_cart(request):
@@ -202,4 +219,22 @@ def view_cart(request):
         'items': items,
         'total': total
     })
+
+def coffeecap(request):
+    id=request.GET.get("id")
+    Product=Products.objects.filter(category_id=id)
+    context={
+        "product":Product
+    }
+
+    return render(request,"coffeecap.html",context)
+
+def get_total_price(self):
+    return self.quntity * self.product.price
+      
+def get_cart_items(self):
+    return Cart.objects.filter(user=self.user)
+      
+def get_cart_total(self):
+    return sum(item.get_total_price() for item in self.get_cart_items())
 

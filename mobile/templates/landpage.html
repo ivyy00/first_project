@@ -3,8 +3,18 @@
 {% block content %}
 
 <div class="container py-5 text-center">
-   <h1 class="mb-4 text-end text-white p-3 rounded" style="background-color: rgb(208, 163, 238);">مرحباً بك في موقع الهواتف الذكية</h1>
-   <p class="load mb-4 text-end ">هنا تجد احدث المواقع في اسعارها وصورها </p>
+  <div class="card text-end" style="box-shadow: 3px 3px 4px 5px rgb(93, 93, 93);" >
+      <div class="card-header" style="background-color: rgb(72, 55, 46); color: aliceblue;"  >
+           <h1> اكتشف عالم القهوة بين يديك
+           </h1>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"> 
+          نقدّم لك أجود أنواع القهوة المختارة بعناية من أفضل المحامص حول العالم — سواء كنت من عشّاق القهوة المطحونة، أو تفضّل طحن البن الطازج بنفسك، أو تبحث عن راحة الكبسولات، لدينا ما يناسب ذوقك. نؤمن أن كل فنجان قهوة هو لحظة تستحق التميّز.</p>
+        </h5>
+  </div>
+
+  </div>
    <div class="row mt-5 d-flex justify-content-around">
          {% for item in data %}
            <div class="col-md-4">
@@ -33,6 +43,35 @@
         
       </div>
       {%endfor%}
+
+      <div class="card-group rounded p-3 m-3">
+        <div class="card m-3" style="box-shadow: 3px 3px 4px 5px rgb(93, 93, 93); ;">
+          <img src="https://images.unsplash.com/photo-1692456515432-9be7941c540a?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">قهوه بن </h2>
+            <p class="card-text">حبوب قهوة محمصة وغير مطحونة، تُطحن حسب الحاجة لضمان نكهة طازجة وجودة أعلى</p>
+            <button class="btn btn-secondary">تصفح المنتج</button>
+          </div>
+        </div>
+        <div class="card m-3" style="box-shadow: 3px 3px 4px 5px rgb(93, 93, 93);;">
+          <img src="https://images.unsplash.com/photo-1631149206144-4549c0468787?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title text-bold">قهوة مطحونه </h2>
+            <p class="card-text">قهوة جاهزة للاستخدام بعد طحن حبوب البن، وتُستخدم غالبًا في أدوات تحضير مثل الفرنش برس أو القهوة التركية.</p>
+            <button class="btn btn-secondary">تصفح المنتج</button>
+          </div>
+        </div>
+        <div class="card m-3 " style="box-shadow: 3px 3px 4px 5px rgb(93, 93, 93);" >
+          <img src="https://images.unsplash.com/photo-1692456516015-e05642a29607?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">كبسولات القهوه </h2>
+            <p class="card-text">قهوة محضّرة مسبقًا داخل كبسولات مخصصة تُستخدم في مكائن القهوة، سهلة وسريعة التحضير دون فوضى </p>
+            <button class="btn btn-secondary ">تصفح المنتج</button>
+          </div>
+        </div>
+      </div>
+    </a>
+
    </div>
 </div>
 

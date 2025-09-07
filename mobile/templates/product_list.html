@@ -1,11 +1,22 @@
-<h2>All Products</h2>
 
-<ul>
-  {% for product in products %}
-    <li>
-      <strong>{{ product.name }}</strong> - ${{ product.price }}
-    </li>
-  {% endfor %}
-</ul>
+{% extends 'base.html'  %}
 
-<a href="{% url 'view_cart' %}" class="btn"> Go to Cart </a>
+{% block content %}
+<div class="container-fluid">
+  <div class="card w-80 p-5 mb-4" >
+        <div class="card-body p-5">
+          <h2 class="card-title">All Products</h2>
+
+          <ul>
+            {% for product in products %}
+              <li>
+                <strong>{{ product.name }}</strong> - ${{ product.price }}
+              </li>
+            {% endfor %}
+          </ul>
+
+          <button class="btn btn-outline-success"><a href="{% url 'cart' %}" class="btn"> Go to Cart </a> </button>
+        </div>
+    </div>
+</div>
+{% endblock %}

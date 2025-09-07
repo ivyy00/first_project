@@ -1,3 +1,9 @@
+
+
+{% extends 'base.html'  %}
+{% block content %}
+{% load static %}
+
 <h2>Your Cart</h2>
 
 {% if items %}
@@ -10,7 +16,7 @@
     {% for item in items %}
       <tr>
         <td>{{ item.product.name }}</td>
-        <td>{{ item.quantity }}</td>
+        <td>{{ item.quntity }}</td>
         <td>${{ item.get_total_price }}</td>
       </tr>
     {% endfor %}
@@ -26,3 +32,4 @@
   <a href="{% url 'product_list' %}" class="btn">Start Shopping</a>
 {% endif %}
 
+{% endblock %}

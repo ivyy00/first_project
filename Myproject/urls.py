@@ -24,5 +24,8 @@ urlpatterns = [
     path('cart/', views.view_cart, name='view_cart'),
     path('products/', views.product_list, name='product_list'),
     path('ajax/cart-preview/', views.ajax_cart_preview, name='ajax_cart_preview'),
+    path('coffeeben/', views.coffeeben, name='coffeeben'),
+    path('coffeecap/', views.coffeecap, name='coffeecap'),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
