@@ -106,7 +106,20 @@ li.dropdown {
          <div class="container">
             <ul class="list-inline">
                <li class="list-inline-item"><a href="{%  url 'auth_login'  %}"> <i class="bi bi-person-fill"></i></a></li>
-               <li class="list-inline-item"> <a href="{% url 'Checkout' %}" > <i class="bi bi-cart-fill"><spam class="cart-badge">{{ cart_total }}</spam></i> </a></li>
+               <li class="list-inline-item">
+                  <div class="position-relative d-inline-block">
+                      <a href="{% url 'Checkout' %}" class="text-white text-decoration-none">
+                          <i class="bi bi-cart-fill"></i>
+                          {% if cart_total > 0 %}
+                              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                  {{ cart_total }}
+                                  <span class="visually-hidden"> items in cart </span>
+                              </span>
+                          {% endif %}
+                      </a>
+                    </div>
+                    
+                  </li>
                <li class="list-inline-item"><form class="d-flex" role="search">
                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                  <button class="btn btn-secondary" type="submit">Search</button>

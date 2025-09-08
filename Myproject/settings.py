@@ -14,7 +14,16 @@ from pathlib import Path
 import os
 import dj_database_url
 import django_heroku
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
+cloudinary.config( 
+  cloud_name = "dqs8ttsea", 
+  api_key = "167877559682528", 
+  api_secret = "167877559682528",
+  secure = True
+)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 

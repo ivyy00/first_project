@@ -3,6 +3,7 @@ from django.urls import path
 from mobile import views
 from django.conf import settings
 from django.conf.urls.static import static
+from mobile.views import test_cloudinary
 
 
 urlpatterns = [
@@ -26,6 +27,7 @@ urlpatterns = [
     path('ajax/cart-preview/', views.ajax_cart_preview, name='ajax_cart_preview'),
     path('coffeeben/', views.coffeeben, name='coffeeben'),
     path('coffeecap/', views.coffeecap, name='coffeecap'),
+    path('cloudinary/', test_cloudinary, name='test_cloudinary'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
