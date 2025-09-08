@@ -14,7 +14,7 @@
         </h5>
   </div>
 
-  </div>
+  <!-- </div>
    <div class="row mt-5 d-flex justify-content-around">
          {% for item in data %}
            <div class="col-md-4">
@@ -42,7 +42,7 @@
            </a>
         
       </div>
-      {%endfor%}
+      {%endfor%} -->
 
 
 
@@ -53,7 +53,7 @@
           <div class="card-body">
             <h2 class="card-title text-bold">قهوة مطحونه </h2>
             <p class="card-text">قهوة جاهزة للاستخدام بعد طحن حبوب البن، وتُستخدم غالبًا في أدوات تحضير مثل الفرنش برس أو القهوة التركية.</p>
-            <button class="btn btn-secondary">تصفح المنتج</button>
+            <a href="{% url 'getphone' %}?id=7"><button class="btn btn-secondary" >تصفح المنتج </button></a>
           </div>
         </div>
 
@@ -64,7 +64,7 @@
           <div class="card-body">
             <h2 class="card-title">كبسولات القهوه </h2>
             <p class="card-text">قهوة محضّرة مسبقًا داخل كبسولات مخصصة تُستخدم في مكائن القهوة، سهلة وسريعة التحضير دون فوضى </p>
-            <button class="btn btn-secondary ">تصفح المنتج</button>
+            <a href="{% url 'getphone' %}?id=6"><button class="btn btn-secondary ">تصفح المنتج</button></a>
           </div>
         </div>
 
@@ -73,7 +73,7 @@
           <div class="card-body">
             <h2 class="card-title">قهوه بن </h2>
             <p class="card-text">قهوة محمصة بشكل كامل وتُطحن قبل التحضير، تعطي نكهة طازجة وغنية. </p>
-            <button class="btn btn-secondary">تصفح المنتج</button>
+            <a href="{% url 'getphone' %}?id=5" ><button class="btn btn-secondary">تصفح المنتج</button></a>
           </div>
 
        

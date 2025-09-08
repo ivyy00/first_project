@@ -9,7 +9,19 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 import requests
 from django.template.loader import render_to_string
+from django.shortcuts import render
+from .cloudinary_utils import upload_image, get_optimized_url, get_cropped_url
 
+def test_cloudinary(request):
+    uploaded_url = upload_image()
+    optimized_url = get_optimized_url()
+    cropped_url = get_cropped_url()
+    
+    return render(request, 'test.html', {
+        'uploaded_url': uploaded_url,
+        'optimized_url': optimized_url,
+        'cropped_url': cropped_url
+    })
 
 # Create your views here.
 def ajax_cart_preview(request):
