@@ -15,6 +15,7 @@ import os
 import dj_database_url
 import django_heroku
 import cloudinary
+import cloudinary_storage
 import cloudinary.uploader
 import cloudinary.api
 
@@ -64,6 +65,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mobile',
     'bootstrap5',
+    'cloudinary',
+    'cloudinary_storage'
+
 ]
 
 MIDDLEWARE = [
@@ -167,3 +171,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CLOUDINARY_STORAGE = {
+   'CLOUD_NAME' :'dqs8ttsea',
+   'API_KEY' :'167877559682528',
+   'API_SECRET':'Ga1sUKpRTCuCdsWUiOSf_SDycI4'
+
+}
+DEFAULT_FILE_STORAGE ='cloudinary_storage.storage.MadiaCloudinaryStorage'
