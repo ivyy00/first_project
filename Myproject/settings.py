@@ -19,12 +19,13 @@ import cloudinary_storage
 import cloudinary.uploader
 import cloudinary.api
 
-cloudinary.config( 
-  cloud_name = "dqs8ttsea", 
-  api_key = "167877559682528", 
-  api_secret = "167877559682528",
-  secure = True
-)
+# cloudinary.config( 
+#   cloud_name = "dqs8ttsea", 
+#   api_key = "167877559682528", 
+#   api_secret = "Ga1sUKpRTCuCdsWUiOSf_SDycI4",
+#   secure = True
+
+# )
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,6 +43,9 @@ DATABASES = {
         ssl_require=True
     )
 }
+
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -156,13 +160,17 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
 # STATICFILES_DIRS = (os.path.join(BASE_DIR , 'static'))
 
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+
+
+
+
+
 
 
 
@@ -178,4 +186,6 @@ CLOUDINARY_STORAGE = {
    'API_SECRET':'Ga1sUKpRTCuCdsWUiOSf_SDycI4'
 
 }
-DEFAULT_FILE_STORAGE ='cloudinary_storage.storage.MadiaCloudinaryStorage'
+
+
+# CLOUDINARY_URL=cloudinary://167877559682528:Ga1sUKpRTCuCdsWUiOSf_SDycI4@dqs8ttsea
